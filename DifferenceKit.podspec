@@ -2,14 +2,14 @@ Pod::Spec.new do |spec|
   spec.name = 'DifferenceKit'
   spec.version  = '1.1.5'
   spec.author = { 'ra1028' => 'r.fe51028.r@gmail.com' }
-  spec.homepage = 'https://github.com/ra1028/DifferenceKit'
+  spec.homepage = 'https://github.com/tunctugcu/DifferenceKit'
   spec.documentation_url = 'https://ra1028.github.io/DifferenceKit'
   spec.summary = 'A fast and flexible O(n) difference algorithm framework for Swift collection.'
   spec.description = <<-DESC
                      A fast and flexible O(n) difference algorithm framework for Swift collection.
                      The algorithm is optimized based on the Paul Heckel's algorithm.
                      DESC
-  spec.source = { :git => 'https://github.com/ra1028/DifferenceKit.git', :tag => spec.version.to_s }
+  spec.source = { :git => 'https://github.com/tunctugcu/DifferenceKit.git', :tag => spec.version.to_s }
   spec.license = { :type => 'Apache 2.0', :file => 'LICENSE' }
   spec.requires_arc = true
   spec.default_subspecs = 'Core', 'UIKitExtension'

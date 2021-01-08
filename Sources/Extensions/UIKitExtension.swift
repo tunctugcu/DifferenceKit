@@ -2,6 +2,30 @@
 import UIKit
 
 public extension UITableView {
+    func reload<C>(
+        using stagedChangeset: StagedChangeset<C>,
+        deleteSectionAnimation: @autoclosure () -> RowAnimation,
+        insertSectionAnimation: @autoclosure () -> RowAnimation,
+        reloadSectionsAnimation: @autoclosure () -> RowAnimation,
+        deleteRowsAnimation: @autoclosure () -> RowAnimation,
+        insertRowsAnimation: @autoclosure () -> RowAnimation,
+        reloadRowsAnimation: @autoclosure () -> RowAnimation,
+        interrupt: ((Changeset<C>) -> Bool)? = nil,
+        setData: (C) -> Void
+    ) {
+        reload(
+            using: stagedChangeset,
+            deleteSectionsAnimation: deleteSectionAnimation(),
+            insertSectionsAnimation: insertSectionAnimation(),
+            reloadSectionsAnimation: reloadSectionsAnimation(),
+            deleteRowsAnimation: deleteRowsAnimation(),
+            insertRowsAnimation: insertRowsAnimation(),
+            reloadRowsAnimation: reloadRowsAnimation(),
+            interrupt: interrupt,
+            setData: setData
+        )
+    }
+    
     /// Applies multiple animated updates in stages using `StagedChangeset`.
     ///
     /// - Note: There are combination of changes that crash when applied simultaneously in `performBatchUpdates`.
